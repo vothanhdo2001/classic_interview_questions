@@ -10,7 +10,7 @@ Have you ever walked into an interview already knowing the questions - but still
 
 I think most of us have been there. And it's not because you're not good enough. It's because you weren't ready for questions you already knew were coming.
 
-**"And then I'm going to move on to discuss 6 questions that come up in almost every interview"** - and how to answer each one in a way that actually works.
+**"And then I'm going to move on to discuss 4 questions that come up in almost every interview"** - and how to answer each one in a way that actually works.
 
 **"And finally, I'll share one idea that changes the way you see interviews."**
 
@@ -67,6 +67,7 @@ That answer is honest. And honest answers build trust.
 
 ---
 
+<!--
 **"I'm proud of myself because I learned to stop being afraid of the next one: 'Tell me about a mistake you made.'"**
 
 Most people think this is a trap. It's not - it's actually a chance to show who you are.
@@ -84,6 +85,7 @@ End with something that shows you're already thinking ahead:
 *"Is there a problem your team is facing right now that you think I could help with?"*
 
 That shows initiative. It shows you already think like part of their team.
+-->
 
 ---
 
@@ -109,12 +111,12 @@ Thank you.
 | research | intermediate ✓ | "learn about / find out about" |
 | feedback | intermediate ✓ | "other people's opinions about your work" |
 | deadline | intermediate ✓ | "the last day to finish something" |
-| self-awareness | intermediate ✓ | "knowing yourself well" |
-| initiative | intermediate ✓ | "take action first" |
+<!-- | self-awareness | intermediate ✓ | "knowing yourself well" | -->
+<!-- | initiative | intermediate ✓ | "take action first" | -->
 | blanked | simple ✓ | "forgot everything / went silent" |
 | firstly / secondly | intermediate ✓ | "first / second" |
 | above all | intermediate ✓ | "most importantly" |
 | willing | intermediate ✓ | "ready / happy to" |
 | timekeeping | intermediate ✓ | "being on time / managing time" |
-| take action first | simple phrase for "initiative" | - |
-| already think like part of their team | simple phrase for "forward-looking" | - |
+<!-- | take action first | simple phrase for "initiative" | - | -->
+<!-- | already think like part of their team | simple phrase for "forward-looking" | - | -->
