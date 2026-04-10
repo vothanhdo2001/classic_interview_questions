@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:5500/presentation.html)",
+      "mcp__claude_ai_Fire_Crawl__firecrawl_scrape",
+      "Bash(where msedge:*)",
+      "Bash(cygpath -w /tmp/slides/slide1.png)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=2560,1600 --screenshot=/tmp/slides/slide4_big.png \"http://127.0.0.1:5500/presentation.html?preview=4\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=2560,1600 --screenshot=/tmp/slides/slide7_big.png \"http://127.0.0.1:5500/presentation.html?preview=7\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=2560,1600 --screenshot=/tmp/slides/slide8_big.png \"http://127.0.0.1:5500/presentation.html?preview=8\")",
+      "Bash(ls /tmp/slides/*_big.png)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=2560,1600 --screenshot=/tmp/slides/slide1_big.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=2560,1600 --screenshot=/tmp/slides/slide6_big.png \"http://127.0.0.1:5500/presentation.html?preview=6\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=2560,1600 --screenshot=/tmp/slides/slide9_big.png \"http://127.0.0.1:5500/presentation.html?preview=9\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=2560,1600 --screenshot=/tmp/slides/slide11_big.png \"http://127.0.0.1:5500/presentation.html?preview=11\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/slide4_v2.png \"http://127.0.0.1:5500/presentation.html?preview=4\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/slide7_v2.png \"http://127.0.0.1:5500/presentation.html?preview=7\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/slide8_v2.png \"http://127.0.0.1:5500/presentation.html?preview=8\")",
+      "Bash(cygpath -w /tmp/slides/)",
+      "Bash(python -c ':*)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v3_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v3_s4.png \"http://127.0.0.1:5500/presentation.html?preview=4\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v3_s7.png \"http://127.0.0.1:5500/presentation.html?preview=7\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v3_s11.png \"http://127.0.0.1:5500/presentation.html?preview=11\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v4_s5.png \"http://127.0.0.1:5500/presentation.html?preview=5\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v4_s6.png \"http://127.0.0.1:5500/presentation.html?preview=6\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v4_s8.png \"http://127.0.0.1:5500/presentation.html?preview=8\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v5_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v6_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v7_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v8_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v9_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")"
+    ]
+  }
+}

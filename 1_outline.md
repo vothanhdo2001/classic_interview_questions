@@ -1,13 +1,13 @@
-# OUTLINE — Ace Your Interview: Mastering Classic Questions
+# OUTLINE - Ace Your Interview: Mastering Classic Questions
 
 ## HOOK (Opening)
-- Relatable question: "Have you ever known a question was coming — but still couldn't answer it?"
-- Key insight: Most people fail not because they are bad at the job — but because they were not ready
+- Relatable question: "Have you ever known a question was coming - but still couldn't answer it?"
+- Key insight: Most people fail not because they are bad at the job - but because they were not ready
 - Promise: "6 questions that come up in almost every interview + a simple way to answer each one"
 
 ---
 
-## BODY — 6 Classic Questions
+## BODY - 6 Classic Questions
 
 ### Q1: "Tell me about yourself"
 - Keywords: **30 seconds · introduction · 3 things**
@@ -41,5 +41,5 @@
 ## CLOSE (Class Reflection)
 - **My favorite activity** in this course was the speaking practice
 - **I want to keep improving** my English by using it in real situations
-- **I want to say thank you** to teacher + classmates — speaking up together made us all better
-- **I'll remember this class** because it gave me more than English skills — it gave me confidence
+- **I want to say thank you** to teacher + classmates - speaking up together made us all better
+- **I'll remember this class** because it gave me more than English skills - it gave me confidence
