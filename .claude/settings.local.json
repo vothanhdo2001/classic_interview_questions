@@ -34,7 +34,8 @@
       "Bash(mkdir -p docs assets)",
       "Bash(mv 1_outline.md 2_full_speech.md 3_powerpoint_content.md noi_dung_tham_khao.md docs/)",
       "Bash(mv favicon.ico qr-code.png assets/)",
-      "Bash(mv CLAUDE.md .claude/)"
+      "Bash(mv CLAUDE.md .claude/)",
+      "Bash(node -e ':*)"
     ]
   }
 }

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Ace Your Interview - Mastering 6 Classic Questions</title>
   <meta name="description"
     content="Master 6 classic job interview questions with proven frameworks and real examples. A speaking challenge presentation for English at Work.">
@@ -67,7 +67,7 @@
     *::after {
       box-sizing: border-box;
       margin: 0;
-      padding: 0
+      padding: 0;
     }
 
     :root {
@@ -88,7 +88,10 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--tx);
-      -webkit-font-smoothing: antialiased
+      -webkit-font-smoothing: antialiased;;
+      touch-action: pan-x;
+      -ms-touch-action: pan-x;
+      overscroll-behavior: none;
     }
 
     /* ─── SCROLL CONTAINER ─── */
@@ -100,6 +103,7 @@
       /* GSAP handles smooth scroll - keep auto */
       scrollbar-width: none;
       -ms-overflow-style: none;
+      -webkit-overflow-scrolling: auto; /* tránh momentum scroll trên iOS */
     }
 
     #app::-webkit-scrollbar {
@@ -202,6 +206,30 @@
       letter-spacing: .08em;
     }
 
+    /* ─── TIMER ─── */
+    #timer {
+      position: fixed;
+      bottom: 22px;
+      left: 22px;
+      z-index: 9998;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dim);
+      letter-spacing: .08em;
+      font-variant-numeric: tabular-nums;
+      cursor: pointer;
+      user-select: none;
+      transition: color .3s;
+    }
+
+    #timer:hover {
+      color: var(--muted);
+    }
+
+    #timer.paused {
+      color: rgba(251,191,36,.5);
+    }
+
     /* ─── KEYBOARD HINT ─── */
     #hint {
       position: fixed;
@@ -297,7 +325,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
 
     .fpill {
@@ -1050,10 +1078,9 @@
     /* ─── TABLET (≤768px) ─── */
     @media(max-width:768px) {
 
-      /* Cho phép scroll nội dung trong mỗi slide */
       .slide {
-        height: auto;
-        min-height: 100vh;
+        height: 100vh;
+        overflow-y: auto;
         padding: 40px 28px;
       }
 
@@ -1081,28 +1108,33 @@
         gap: 16px;
       }
 
-      .hero-presenter {
-        position: static !important;
-        justify-content: center;
+      .hero-presenter-mobile {
+        display: flex !important;
       }
 
       .hero-qr {
         position: static !important;
-        flex-direction: row !important;
-        gap: 12px;
+        flex-direction: column !important;
+        gap: 6px;
         align-items: center;
       }
 
       .hero-qr .glass {
-        width: 80px !important;
-        height: 80px !important;
-        padding: 5px !important;
+        width: 70px !important;
+        height: 70px !important;
+        padding: 4px !important;
+        flex-shrink: 0;
       }
 
       .hero-qr p {
-        font-size: 11px !important;
+        font-size: 10px !important;
         margin: 0 !important;
       }
+
+      .hero-qr p:first-child {
+        display: none;
+      }
+
 
       /* Ẩn illustration & nav dots */
       .hm {
@@ -1154,7 +1186,10 @@
       }
 
       .frow {
-        gap: 8px;
+        flex-direction: column !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 4px;
       }
 
       .fpill {
@@ -1163,7 +1198,18 @@
       }
 
       .farr {
-        font-size: 14px !important;
+        font-size: 0 !important;
+        width: 20px;
+        height: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+      .farr::after {
+        content: '↓';
+        font-size: 14px;
+        color: var(--muted);
       }
 
       .rcard {
@@ -1250,6 +1296,12 @@
         right: 10px;
       }
 
+      #timer {
+        font-size: 11px;
+        bottom: 10px;
+        left: 10px;
+      }
+
       .glass {
         border-radius: 14px;
       }
@@ -1259,6 +1311,8 @@
     @media(max-width:480px) {
       .slide {
         padding: 30px 16px;
+        height: 100vh;
+        overflow-y: auto;
       }
 
       /* Hero */
@@ -1301,22 +1355,9 @@
         line-height: 1.5;
       }
 
-      /* Formula pills dọc */
-      .frow {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-      }
-
-      .farr {
-        transform: rotate(90deg);
-        font-size: 11px !important;
-        margin: -2px 0 -2px 14px;
-      }
-
       .fpill {
         padding: 6px 12px !important;
-        font-size: 12px !important;
+        font-size: 11px !important;
       }
 
       /* Roadmap */
@@ -1411,6 +1452,7 @@
   <div id="progress"></div>
   <nav id="dots" aria-label="Slide navigation"></nav>
   <div id="counter">1 / 11</div>
+  <div id="timer">00:00</div>
   <div id="hint"><span class="kk">↑</span><span class="kk">↓</span><span>or scroll</span></div>
 
   <main role="main">
@@ -1507,12 +1549,23 @@
                   fill="none" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
+          <!-- Presenter info — inside .hm for desktop -->
+          <div class="hero-presenter" data-a="up" data-d=".45"
+            style="margin-top:18px;display:flex;align-items:center;justify-content:center;gap:12px;">
+            <div
+              style="width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,#818cf8,#22d3ee);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 4px 16px rgba(129,140,248,.35);">
+              VD</div>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:var(--tx);line-height:1.2;">VO THANH DO</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:1px;">Software Engineer</div>
+            </div>
+          </div>
           </div>
         </div>
 
-        <!-- Presenter info — outside .hm so it shows on mobile -->
-        <div class="hero-presenter" data-a="up" data-d=".45"
-          style="position:absolute;bottom:40px;left:48px;z-index:3;display:flex;align-items:center;gap:12px;">
+        <!-- Presenter info — duplicate for mobile (hidden on desktop) -->
+        <div class="hero-presenter-mobile" data-a="up" data-d=".45"
+          style="display:none;align-items:center;justify-content:center;gap:12px;">
           <div
             style="width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,#818cf8,#22d3ee);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 4px 16px rgba(129,140,248,.35);">
             VD</div>
@@ -1664,7 +1717,7 @@
             </div>
             <div class="rcard glass" style="background:rgba(244,114,182,.08);border-color:rgba(244,114,182,.2);">
               <div class="rnum"
-                style="background:linear-gradient(135deg,#f472b6,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:50px;font-weight:900;line-height:1;margin-bottom:12px;">
+                style="background:linear-gradient(135deg,#f472b6,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
                 06</div>
               <div class="rq">Do you have any questions for us?</div>
             </div>
@@ -1952,7 +2005,7 @@
                 data-a="right" data-d=".17">
                 ★ One strength + one real story = far more convincing than a list.
               </p>
-              <div class="frow" style="margin-bottom:30px;flex-wrap:nowrap;" data-stagger data-d=".22">
+              <div class="frow" style="margin-bottom:30px;" data-stagger data-d=".22">
                 <div class="fpill"
                   style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3);color:#4ade80;padding:10px 16px;font-size:15px;">
                   Strength</div>
@@ -2095,7 +2148,7 @@
                   are.</strong><br>
                 Employers want responsibility, not perfection.
               </p>
-              <div class="frow" style="margin-bottom:30px;flex-wrap:nowrap;" data-stagger data-d=".22">
+              <div class="frow" style="margin-bottom:30px;" data-stagger data-d=".22">
                 <div class="fpill"
                   style="background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.3);color:#a78bfa;padding:10px 16px;font-size:15px;">
                   Mistake</div>
@@ -2394,14 +2447,45 @@
     const TOTAL = slides.length;
     let cur = 0;
     let locked = false;
-    const LOCK_MS = 1050; // must cover full morph: phase1 (.42) + phase2 (.6)
+    const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    /* ── Resolve initial slide from hash/preview ── */
+    function getInitialSlide() {
+      const hash = location.hash.replace('#', '');
+      if (hash) {
+        const idx = slides.findIndex(s => s.id === hash);
+        if (idx >= 0) return idx;
+      }
+      const p = parseInt(new URLSearchParams(location.search).get('preview') || '0') - 1;
+      if (p >= 0 && p < TOTAL) return p;
+      return 0;
+    }
+    cur = getInitialSlide();
+
+    /* ── MOBILE MODE: stack slides absolutely, show only current ── */
+    if (isMobile) {
+      app.style.overflow = 'hidden';
+      app.style.position = 'relative';
+      slides.forEach((s, i) => {
+        s.style.position = 'absolute';
+        s.style.top = '0';
+        s.style.left = '0';
+        s.style.width = '100%';
+        s.style.height = '100vh';
+        s.style.overflowY = 'auto';
+        if (i !== cur) {
+          s.style.opacity = '0';
+          s.style.pointerEvents = 'none';
+        }
+      });
+    }
 
     /* ── NAV DOTS ─────────────────────────────────────────── */
     const dotsEl = document.getElementById('dots');
     const labels = ['Hero', 'Reality', 'Roadmap', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Reflection', 'Thank You'];
     slides.forEach((_, i) => {
       const d = document.createElement('div');
-      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.className = 'dot' + (i === cur ? ' active' : '');
       d.dataset.label = labels[i] || (i + 1);
       d.addEventListener('click', () => goTo(i));
       dotsEl.appendChild(d);
@@ -2415,14 +2499,13 @@
       allDots.forEach((d, j) => d.classList.toggle('active', j === i));
       progressEl.style.width = (i / (TOTAL - 1) * 100) + '%';
       counterEl.textContent = (i + 1) + ' / ' + TOTAL;
-      // Update URL hash to match current slide id
       const id = slides[i].id;
       if (location.hash !== '#' + id) {
         history.replaceState(null, '', '#' + id);
       }
     }
 
-    /* ── GO TO SLIDE (MORPH: scale + blur + cross-fade) ────── */
+    /* ── GO TO SLIDE ──────────────────────────────────────── */
     function goTo(idx) {
       idx = Math.max(0, Math.min(TOTAL - 1, idx));
       if (idx === cur || locked) return;
@@ -2433,45 +2516,64 @@
       cur = idx;
       updateUI(idx);
 
-      // Pre-set incoming slide to morph-in start state so it never flashes during the snap-scroll
-      gsap.set(toSlide, {
-        opacity: 0,
-        scale: goingForward ? 1.12 : 0.88,
-        filter: 'blur(10px)'
-      });
-
-      // Phase 1 — morph the current slide OUT
-      gsap.to(fromSlide, {
-        opacity: 0,
-        scale: goingForward ? 0.88 : 1.12,
-        filter: 'blur(10px)',
-        duration: 0.42,
-        ease: 'power2.in',
-        onComplete: () => {
-          // Snap-scroll the container to the new slide's viewport
-          app.scrollTop = idx * window.innerHeight;
-          // Reset the outgoing slide so it's clean when revisited
-          gsap.set(fromSlide, { clearProps: 'opacity,scale,filter,transform' });
-
-          // Phase 2 — morph the new slide IN
-          gsap.to(toSlide, {
-            opacity: 1,
-            scale: 1,
-            filter: 'blur(0px)',
-            duration: 0.6,
-            ease: 'power3.out',
-            onComplete: () => {
-              gsap.set(toSlide, { clearProps: 'scale,filter,transform' });
-              locked = false;
-            }
-          });
-          // Trigger entrance reveals just as the morph-in starts
-          animateSlide(toSlide);
-        }
-      });
+      if (isMobile) {
+        /* ── MOBILE: simple crossfade, no scroll ── */
+        toSlide.style.pointerEvents = '';
+        toSlide.scrollTop = 0;
+        gsap.set(toSlide, { opacity: 0 });
+        gsap.to(fromSlide, {
+          opacity: 0,
+          duration: 0.3,
+          ease: 'power2.in',
+          onComplete: () => {
+            fromSlide.style.pointerEvents = 'none';
+            gsap.set(fromSlide, { clearProps: 'transform,scale,filter' });
+          }
+        });
+        gsap.to(toSlide, {
+          opacity: 1,
+          duration: 0.35,
+          delay: 0.15,
+          ease: 'power2.out',
+          onComplete: () => {
+            locked = false;
+          }
+        });
+        animateSlide(toSlide);
+      } else {
+        /* ── DESKTOP: morph scale + blur + cross-fade ── */
+        gsap.set(toSlide, {
+          opacity: 0,
+          scale: goingForward ? 1.12 : 0.88,
+          filter: 'blur(10px)'
+        });
+        gsap.to(fromSlide, {
+          opacity: 0,
+          scale: goingForward ? 0.88 : 1.12,
+          filter: 'blur(10px)',
+          duration: 0.42,
+          ease: 'power2.in',
+          onComplete: () => {
+            app.scrollTop = idx * window.innerHeight;
+            gsap.set(fromSlide, { clearProps: 'opacity,scale,filter,transform' });
+            gsap.to(toSlide, {
+              opacity: 1,
+              scale: 1,
+              filter: 'blur(0px)',
+              duration: 0.6,
+              ease: 'power3.out',
+              onComplete: () => {
+                gsap.set(toSlide, { clearProps: 'scale,filter,transform' });
+                locked = false;
+              }
+            });
+            animateSlide(toSlide);
+          }
+        });
+      }
     }
 
-    /* ── WHEEL: exactly one slide per scroll ──────────────── */
+    /* ── WHEEL: exactly one slide per scroll (desktop) ────── */
     let wheelAccum = 0, wheelTimer = null;
     app.addEventListener('wheel', e => {
       e.preventDefault();
@@ -2486,13 +2588,24 @@
       }, 40);
     }, { passive: false });
 
-    /* ── TOUCH SWIPE ─────────────────────────────────────── */
+    /* ── TOUCH SWIPE (mobile) ────────────────────────────── */
     let ty0 = 0;
-    app.addEventListener('touchstart', e => { ty0 = e.touches[0].clientY; }, { passive: true });
-    app.addEventListener('touchend', e => {
-      if (locked) return;
-      const dy = ty0 - e.changedTouches[0].clientY;
-      if (Math.abs(dy) > 55) goTo(cur + (dy > 0 ? 1 : -1));
+    let touchHandled = false;
+    document.addEventListener('touchstart', e => {
+      ty0 = e.touches[0].clientY;
+      touchHandled = false;
+    }, { passive: true });
+    document.addEventListener('touchmove', e => {
+      if (touchHandled || locked) return;
+      const dy = ty0 - e.touches[0].clientY;
+      if (Math.abs(dy) > 40) {
+        e.preventDefault();
+        touchHandled = true;
+        goTo(cur + (dy > 0 ? 1 : -1));
+      }
+    }, { passive: false });
+    document.addEventListener('touchend', () => {
+      touchHandled = false;
     }, { passive: true });
 
     /* ── KEYBOARD ─────────────────────────────────────────── */
@@ -2501,6 +2614,8 @@
       const prev = ['ArrowUp', 'ArrowLeft', 'PageUp'];
       if (next.includes(e.key)) { e.preventDefault(); goTo(cur + 1); }
       if (prev.includes(e.key)) { e.preventDefault(); goTo(cur - 1); }
+      if (e.key === 's' || e.key === 'S') { timerRunning ? pauseTimer() : startTimer(); }
+      if ((e.key === 'r' || e.key === 'R') && !timerRunning) resetTimer();
     });
 
     /* ── HIDE HINT ON FIRST INTERACTION ─────────────────── */
@@ -2577,59 +2692,110 @@
       }, 300);
     }
 
-    /* ── INTERSECTION OBSERVER: catch manual scroll ─────── */
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.55 && !locked) {
-          const i = parseInt(entry.target.dataset.i);
-          if (i !== cur) { cur = i; updateUI(i); }
-          animateSlide(entry.target);
-        }
-      });
-    }, { threshold: 0.55 });
-    slides.forEach(s => io.observe(s));
-
-    /* ── PREVIEW MODE (query param ?preview=N, N=1-11) ─── */
-    const urlParams = new URLSearchParams(location.search);
-    const previewIdx = parseInt(urlParams.get('preview') || '0') - 1;
-    if (previewIdx >= 0) {
-      document.body.classList.add('preview');
-      // Show all slides with opacity:1 and scroll to target
-      slides.forEach(s => seen.add(s.id)); // mark all as animated
+    /* ── APPLY INITIAL SLIDE ──────────────────────────────── */
+    if (cur > 0) {
+      updateUI(cur);
+      if (!isMobile) app.scrollTop = cur * window.innerHeight;
     }
+    animateSlide(slides[cur]);
 
-    /* ── RESOLVE START SLIDE: ?preview=N > #hash > slide 0 ── */
-    function resolveStartSlide() {
-      if (previewIdx >= 0) return previewIdx;
-      const hash = location.hash.replace('#', '');
-      if (hash) {
-        const idx = slides.findIndex(s => s.id === hash);
-        if (idx >= 0) return idx;
-      }
-      return 0;
+    /* ── INTERSECTION OBSERVER: catch manual scroll (desktop only) ─── */
+    if (!isMobile) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.55 && !locked) {
+            const i = parseInt(entry.target.dataset.i);
+            if (i !== cur) { cur = i; updateUI(i); }
+            animateSlide(entry.target);
+          }
+        });
+      }, { threshold: 0.55 });
+      slides.forEach(s => io.observe(s));
     }
-
-    /* ── INIT ────────────────────────────────────────────── */
-    window.addEventListener('load', () => {
-      const startIdx = resolveStartSlide();
-      if (previewIdx >= 0) {
-        document.body.classList.add('preview');
-        slides.forEach(s => seen.add(s.id));
-      }
-      const ti = Math.max(0, Math.min(TOTAL - 1, startIdx));
-      cur = ti;
-      updateUI(ti);
-      app.scrollTop = ti * window.innerHeight;
-      if (previewIdx < 0) {
-        animateSlide(slides[ti]);
-      }
-    });
 
     /* ── HANDLE HASH CHANGE (browser back/forward) ─────── */
     window.addEventListener('hashchange', () => {
       const hash = location.hash.replace('#', '');
       const idx = slides.findIndex(s => s.id === hash);
       if (idx >= 0 && idx !== cur) goTo(idx);
+    });
+
+    /* ── PRESENTATION TIMER (mm:ss) — persisted via sessionStorage ── */
+    const timerEl = document.getElementById('timer');
+    let timerRunning = false;
+    let timerInterval = null;
+
+    // Restore from sessionStorage: startedAt (timestamp when timer started) + elapsed (seconds accumulated before last pause)
+    let timerElapsed = parseInt(sessionStorage.getItem('timer_elapsed') || '0');
+    let timerStartedAt = parseInt(sessionStorage.getItem('timer_startedAt') || '0');
+    let timerWasRunning = sessionStorage.getItem('timer_running') === '1';
+
+    function getTimerSeconds() {
+      if (timerRunning) {
+        return timerElapsed + Math.floor((Date.now() - timerStartedAt) / 1000);
+      }
+      return timerElapsed;
+    }
+
+    function updateTimerDisplay() {
+      const total = getTimerSeconds();
+      const m = String(Math.floor(total / 60)).padStart(2, '0');
+      const s = String(total % 60).padStart(2, '0');
+      timerEl.textContent = m + ':' + s;
+    }
+
+    function startTimer() {
+      if (timerRunning) return;
+      timerRunning = true;
+      timerStartedAt = Date.now();
+      timerEl.classList.remove('paused');
+      sessionStorage.setItem('timer_running', '1');
+      sessionStorage.setItem('timer_startedAt', String(timerStartedAt));
+      timerInterval = setInterval(updateTimerDisplay, 1000);
+      updateTimerDisplay();
+    }
+
+    function pauseTimer() {
+      if (timerRunning) {
+        timerElapsed = getTimerSeconds();
+        sessionStorage.setItem('timer_elapsed', String(timerElapsed));
+      }
+      timerRunning = false;
+      timerEl.classList.add('paused');
+      sessionStorage.setItem('timer_running', '0');
+      clearInterval(timerInterval);
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      timerElapsed = 0;
+      timerStartedAt = 0;
+      sessionStorage.removeItem('timer_elapsed');
+      sessionStorage.removeItem('timer_startedAt');
+      sessionStorage.removeItem('timer_running');
+      timerEl.classList.remove('paused');
+      updateTimerDisplay();
+    }
+
+    // Restore timer state on page load
+    if (timerWasRunning && timerStartedAt > 0) {
+      // Recover time that passed while running before reload
+      timerElapsed += Math.floor((Date.now() - timerStartedAt) / 1000);
+      sessionStorage.setItem('timer_elapsed', String(timerElapsed));
+      startTimer();
+    } else if (timerElapsed > 0) {
+      timerEl.classList.add('paused');
+      updateTimerDisplay();
+    }
+
+    // Click = start/pause, Double-click = reset
+    timerEl.addEventListener('click', () => {
+      if (timerRunning) pauseTimer();
+      else startTimer();
+    });
+    timerEl.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      if (!timerRunning) resetTimer();
     });
   </script>
 </body>
