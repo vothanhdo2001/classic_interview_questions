@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo actually is
 
-Despite the directory name `classic_interview_questions`, this is **not** a coding-interview question bank. It is the deliverable set for a short English speaking challenge (course: "English at Work") on the topic *"Ace Your Interview: Mastering 6 Classic Questions"*. The six questions are soft-skill HR questions (Tell me about yourself, Why this job, Greatest strength, Greatest weakness, A mistake you made, Your questions for us), not algorithmic problems.
+Despite the directory name `classic_interview_questions`, this is **not** a coding-interview question bank. It is the deliverable set for a short English speaking challenge (course: "English at Work") on the topic *"Ace Your Interview: Mastering 4 Classic Questions"*. The six questions are soft-skill HR questions (Tell me about yourself, Why this job, Greatest strength, Greatest weakness, A mistake you made, Your questions for us), not algorithmic problems.
 
 There is no build system, no package manager, no tests, and no backend. Everything ships as static Markdown plus a single self-contained HTML file.
 

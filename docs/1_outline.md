@@ -7,7 +7,7 @@
 
 ---
 
-## BODY - 6 Classic Questions
+## BODY - 4 Classic Questions
 
 ### Q1: "Tell me about yourself"
 - Keywords: **30 seconds · introduction · 3 things**

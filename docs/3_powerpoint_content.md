@@ -5,7 +5,7 @@
 
 ## SLIDE 1 - Title Slide
 **Title:** Ace Your Interview
-**Subtitle:** Mastering 6 Classic Questions That Win Job Offers
+**Subtitle:** Mastering 4 Classic Questions That Win Job Offers
 **Visual idea:** Professional person shaking hands / confident pose in office
 
 ---
@@ -25,7 +25,7 @@
 
 ---
 
-## SLIDE 3 - The 6 Classic Questions (Roadmap)
+## SLIDE 3 - The 4 Classic Questions (Roadmap)
 **Headline:** 6 Questions. 1 Framework. Endless Opportunities.
 
 **Content (numbered list):**
