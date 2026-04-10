@@ -2609,6 +2609,7 @@
     }, { passive: true });
 
     /* ── KEYBOARD ─────────────────────────────────────────── */
+    let numBuffer = '', numTimer = null;
     document.addEventListener('keydown', e => {
       const next = ['ArrowDown', 'ArrowRight', 'PageDown'];
       const prev = ['ArrowUp', 'ArrowLeft', 'PageUp'];
@@ -2616,6 +2617,20 @@
       if (prev.includes(e.key)) { e.preventDefault(); goTo(cur - 1); }
       if (e.key === 's' || e.key === 'S') { timerRunning ? pauseTimer() : startTimer(); }
       if ((e.key === 'r' || e.key === 'R') && !timerRunning) resetTimer();
+      // Number keys: buffer digits, delay 600ms to allow multi-digit input (e.g. "11")
+      if (e.key >= '0' && e.key <= '9') {
+        numBuffer += e.key;
+        clearTimeout(numTimer);
+        numTimer = setTimeout(() => {
+          const idx = parseInt(numBuffer) - 1;
+          if (idx >= 0 && idx < TOTAL) goTo(idx);
+          numBuffer = '';
+        }, 600);
+      }
+      if (e.key === 'h' || e.key === 'H') {
+        timerEl.style.display = timerEl.style.display === 'none' ? '' : 'none';
+        sessionStorage.setItem('timer_hidden', timerEl.style.display === 'none' ? '1' : '0');
+      }
     });
 
     /* ── HIDE HINT ON FIRST INTERACTION ─────────────────── */
@@ -2776,6 +2791,9 @@
       timerEl.classList.remove('paused');
       updateTimerDisplay();
     }
+
+    // Restore visibility
+    if (sessionStorage.getItem('timer_hidden') === '1') timerEl.style.display = 'none';
 
     // Restore timer state on page load
     if (timerWasRunning && timerStartedAt > 0) {
