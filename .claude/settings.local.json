@@ -29,7 +29,12 @@
       "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v6_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
       "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v7_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
       "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v8_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
-      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v9_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")"
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=/tmp/slides/v9_s1.png \"http://127.0.0.1:5500/presentation.html?preview=1\")",
+      "Bash(pip show:*)",
+      "Bash(mkdir -p docs assets)",
+      "Bash(mv 1_outline.md 2_full_speech.md 3_powerpoint_content.md noi_dung_tham_khao.md docs/)",
+      "Bash(mv favicon.ico qr-code.png assets/)",
+      "Bash(mv CLAUDE.md .claude/)"
     ]
   }
 }

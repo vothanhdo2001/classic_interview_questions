@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /*.md$
+
+Sitemap: https://english.vothanhdo.id.vn/sitemap.xml

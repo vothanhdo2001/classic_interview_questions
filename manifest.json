@@ -1,0 +1,16 @@
+{
+  "name": "Ace Your Interview - Mastering 6 Classic Questions",
+  "short_name": "Ace Interview",
+  "description": "Interactive presentation: Master 6 classic job interview questions with proven frameworks and real examples.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#04060f",
+  "theme_color": "#818cf8",
+  "icons": [
+    {
+      "src": "assets/favicon.ico",
+      "sizes": "64x64 32x32 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

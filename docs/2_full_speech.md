@@ -1,5 +1,5 @@
 # FULL SPEECH - Ace Your Interview: Mastering Classic Questions
-## (~4–5 min | target ~600 words) | Speaking Challenge Format
+## (~6–7 min | target ~900 words) | Speaking Challenge Format
 
 ---
 
@@ -29,6 +29,8 @@ This is your opening. But here's the mistake most people make: they tell their w
 
 Something like: *"I studied IT, I'm good at solving problems, and I want to work here because your projects are exactly what I want to be doing."*
 
+And when you mention your experience, use phrases like *"I'm particularly proud of..."* or *"A good example that comes to mind..."* to bring in a real story. For example: *"I'm particularly proud of my timekeeping - I always plan ahead to meet deadlines."*
+
 Short. Clear. You're already in control.
 
 ---
@@ -39,15 +41,15 @@ And look - this is where most people lose points. They say *"I want to grow"* or
 
 What actually works is doing your research first. Find one real thing about the company - a project, a goal - and connect it to your own story. That's what makes you stand out.
 
+And if you're stuck for words in the moment, just be direct: *"I really, really want this job and I am willing to work very hard if I get it."* It's simple - but it shows real motivation.
+
 ---
 
 Okay, moving on - *"What is your greatest strength?"*
 
 Please don't say *"I'm a hard worker."* I know it feels safe, but it sounds like everyone else.
 
-Instead, name your strength - and then tell a quick story that proves it.
-
-*"My strength is staying calm when things get difficult. When my team's deadline moved up by one week, I made a new plan and we finished on time."*
+Instead, name your strength - and then use simple connectors to walk through what happened: *"My strength is staying calm when things get difficult. Firstly, when my team's deadline moved up by one week, I didn't panic. Secondly, I made a new plan and reorganized the tasks. And above all, we finished on time."*
 
 One strength. One story. That's all you need.
 
@@ -96,7 +98,7 @@ That shows initiative. It shows you already think like part of their team.
 Thank you.
 
 ---
-*~610 words spoken | 130 wpm → ~4.5 min | 120 wpm → ~5 min*
+*~880 words spoken | 130 wpm → ~6.8 min | 120 wpm → ~7.3 min*
 *Pause 1–2 sec after each bold line.*
 
 ---
@@ -110,5 +112,9 @@ Thank you.
 | self-awareness | intermediate ✓ | "knowing yourself well" |
 | initiative | intermediate ✓ | "take action first" |
 | blanked | simple ✓ | "forgot everything / went silent" |
+| firstly / secondly | intermediate ✓ | "first / second" |
+| above all | intermediate ✓ | "most importantly" |
+| willing | intermediate ✓ | "ready / happy to" |
+| timekeeping | intermediate ✓ | "being on time / managing time" |
 | take action first | simple phrase for "initiative" | - |
 | already think like part of their team | simple phrase for "forward-looking" | - |

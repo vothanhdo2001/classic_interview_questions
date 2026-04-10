@@ -4,11 +4,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ace Your Interview</title>
+  <title>Ace Your Interview - Mastering 6 Classic Questions</title>
+  <meta name="description" content="Master 6 classic job interview questions with proven frameworks and real examples. A speaking challenge presentation for English at Work.">
+  <meta name="keywords" content="job interview, interview questions, tell me about yourself, greatest strength, greatest weakness, English at Work, speaking challenge">
+  <meta name="author" content="Vo Thanh Do">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://english.vothanhdo.id.vn/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ace Your Interview - Mastering 6 Classic Questions">
+  <meta property="og:description" content="Master 6 classic job interview questions with proven frameworks and real examples.">
+  <meta property="og:url" content="https://english.vothanhdo.id.vn/">
+  <meta property="og:site_name" content="Ace Your Interview">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://english.vothanhdo.id.vn/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ace Your Interview - Mastering 6 Classic Questions">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ace Your Interview - Mastering 6 Classic Questions">
+  <meta name="twitter:description" content="Master 6 classic job interview questions with proven frameworks and real examples.">
+  <meta name="twitter:image" content="https://english.vothanhdo.id.vn/assets/og-image.png">
+  <!-- Theme -->
+  <meta name="theme-color" content="#818cf8">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PresentationDigitalDocument",
+    "name": "Ace Your Interview - Mastering 6 Classic Questions",
+    "description": "Master 6 classic job interview questions with proven frameworks and real examples. A speaking challenge presentation for English at Work.",
+    "url": "https://english.vothanhdo.id.vn/",
+    "author": {
+      "@type": "Person",
+      "name": "Vo Thanh Do",
+      "jobTitle": "Software Engineer"
+    },
+    "datePublished": "2026-04-10",
+    "inLanguage": "en",
+    "keywords": "job interview, interview questions, English at Work, speaking challenge",
+    "image": "https://english.vothanhdo.id.vn/assets/og-image.png",
+    "educationalLevel": "Intermediate",
+    "learningResourceType": "Presentation"
+  }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <style>
     /* ─── RESET ─── */
@@ -26,8 +72,8 @@
       --gborder: rgba(255, 255, 255, 0.12);
       --gshine: rgba(255, 255, 255, 0.22);
       --tx: #eef2ff;
-      --muted: rgba(238, 242, 255, 0.56);
-      --dim: rgba(238, 242, 255, 0.28);
+      --muted: rgba(238, 242, 255, 0.75);
+      --dim: rgba(238, 242, 255, 0.50);
     }
 
     html,
@@ -1015,10 +1061,11 @@
 <body>
 
   <div id="progress"></div>
-  <div id="dots"></div>
+  <nav id="dots" aria-label="Slide navigation"></nav>
   <div id="counter">1 / 11</div>
   <div id="hint"><span class="kk">↑</span><span class="kk">↓</span><span>or scroll</span></div>
 
+  <main role="main">
   <div id="app">
 
     <!-- ═══════════ S1: HERO ═══════════ -->
@@ -1065,7 +1112,7 @@
         </div>
 
         <!-- Illustration: confident professional -->
-        <div class="hm" data-a="right" data-d=".15" style="flex:0 0 320px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <div class="hm" data-a="right" data-d=".15" style="flex:0 0 320px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-right:80px;">
           <div class="glass"
             style="padding:32px;border-radius:30px;background:rgba(129,140,248,.07);border-color:rgba(129,140,248,.2);animation:fl 7s ease-in-out infinite;">
             <svg width="220" height="230" viewBox="0 0 220 230" fill="none">
@@ -1122,6 +1169,18 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- QR Code — bottom-right of hero slide -->
+      <div data-a="up" data-d=".55"
+        style="position:absolute;bottom:36px;right:48px;z-index:3;display:flex;flex-direction:column;align-items:center;">
+        <p style="font-size:13px;font-weight:700;color:var(--tx);margin-bottom:10px;">Scan to get slides</p>
+        <div class="glass"
+          style="padding:6px;border-radius:14px;background:rgba(255,255,255,.95);border-color:rgba(129,140,248,.25);width:200px;height:200px;display:flex;align-items:center;justify-content:center;">
+          <img src="assets/qr-code.png" alt="QR Code" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"
+            onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div style=\'color:#818cf8;font-size:15px;font-weight:700;text-align:center;line-height:1.4;\'>QR<br>CODE<br>HERE</div>');">
+        </div>
+        <p style="font-size:11px;color:var(--muted);margin-top:6px;">english.vothanhdo.id.vn</p>
       </div>
 
       <div class="scrollind" data-a="fade" data-d=".6">Scroll to begin</div>
@@ -1299,6 +1358,20 @@
               data-d=".25">
               "Keep it crisp: who you are, what you bring, and why you're here."
             </div>
+            <div class="blist" style="margin-top:20px;" data-stagger data-d=".32">
+              <div class="bitem">
+                <div class="bdot" style="background:#818cf8;box-shadow:0 0 8px rgba(129,140,248,.55);"></div>
+                <span><em>"I'm particularly proud of..."</em></span>
+              </div>
+              <div class="bitem">
+                <div class="bdot" style="background:#818cf8;box-shadow:0 0 8px rgba(129,140,248,.55);"></div>
+                <span><em>"A good example that comes to mind..."</em></span>
+              </div>
+              <div class="bitem">
+                <div class="bdot" style="background:#818cf8;box-shadow:0 0 8px rgba(129,140,248,.55);"></div>
+                <span><em>"Timekeeping is important to me"</em></span>
+              </div>
+            </div>
           </div>
 
           <!-- Stopwatch SVG -->
@@ -1417,9 +1490,13 @@
               </div>
             </div>
             <div class="glass"
-              style="padding:20px 24px;background:rgba(34,211,238,.07);border-color:rgba(34,211,238,.2);">
+              style="padding:20px 24px;background:rgba(34,211,238,.07);border-color:rgba(34,211,238,.2);margin-bottom:12px;">
               💡 <em style="font-size:17px;color:var(--muted);line-height:1.6;">"People who truly know the company
                 always stand out."</em>
+            </div>
+            <div class="glass"
+              style="padding:16px 24px;background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.2);">
+              🗣️ <em style="font-size:16px;color:var(--muted);line-height:1.6;">Stuck for words? Just say: "I really, really want this job and I am willing to work very hard if I get it."</em>
             </div>
             <!-- Magnifying glass (good) -->
             <div style="margin-top:14px;display:flex;justify-content:center;">
@@ -1505,22 +1582,23 @@
               data-d=".17">
               ★ One strength + one real story = far more convincing than a list.
             </p>
-            <div class="frow" style="margin-bottom:30px;" data-stagger data-d=".22">
+            <div class="frow" style="margin-bottom:30px;flex-wrap:nowrap;" data-stagger data-d=".22">
               <div class="fpill"
-                style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3);color:#4ade80;">Strength</div>
-              <div class="farr">→</div>
+                style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3);color:#4ade80;padding:10px 16px;font-size:15px;">Strength</div>
+              <div class="farr" style="font-size:16px;">→</div>
               <div class="fpill"
-                style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3);color:#4ade80;">Real Situation
-              </div>
-              <div class="farr">→</div>
+                style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3);color:#4ade80;padding:10px 16px;font-size:15px;">Firstly...</div>
+              <div class="farr" style="font-size:16px;">→</div>
               <div class="fpill"
-                style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3);color:#4ade80;">Result</div>
+                style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3);color:#4ade80;padding:10px 16px;font-size:15px;">Secondly...</div>
+              <div class="farr" style="font-size:16px;">→</div>
+              <div class="fpill"
+                style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3);color:#4ade80;padding:10px 16px;font-size:15px;">Above all...</div>
             </div>
             <div class="qbox glow-pulse"
               style="border-color:#4ade80;background:rgba(52,211,153,.08);--tw-shadow:#4ade80;" data-a="right"
               data-d=".25">
-              "My strength is staying calm when things get difficult. When my team's deadline moved up by one week, I
-              made a new plan and we finished on time."
+              "My strength is staying calm when things get difficult. Firstly, when my team's deadline moved up by one week, I didn't panic. Secondly, I made a new plan and reorganized the tasks. And above all, we finished on time."
             </div>
           </div>
         </div>
@@ -1635,19 +1713,18 @@
                 are.</strong><br>
               Employers want responsibility, not perfection.
             </p>
-            <div class="frow" style="margin-bottom:30px;" data-stagger data-d=".22">
+            <div class="frow" style="margin-bottom:30px;flex-wrap:nowrap;" data-stagger data-d=".22">
               <div class="fpill"
-                style="background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.3);color:#a78bfa;">Mistake</div>
-              <div class="farr">→</div>
+                style="background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.3);color:#a78bfa;padding:10px 16px;font-size:15px;">Mistake</div>
+              <div class="farr" style="font-size:16px;">→</div>
               <div class="fpill"
-                style="background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.3);color:#a78bfa;">Lesson</div>
-              <div class="farr">→</div>
+                style="background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.3);color:#a78bfa;padding:10px 16px;font-size:15px;">Lesson</div>
+              <div class="farr" style="font-size:16px;">→</div>
               <div class="fpill"
-                style="background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.3);color:#a78bfa;">Fixed It</div>
-              <div class="farr">→</div>
+                style="background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.3);color:#a78bfa;padding:10px 16px;font-size:15px;">Fixed It</div>
+              <div class="farr" style="font-size:16px;">→</div>
               <div class="fpill"
-                style="background:rgba(244,114,182,.12);border-color:rgba(244,114,182,.3);color:#f472b6;">Positive
-                Outcome</div>
+                style="background:rgba(244,114,182,.12);border-color:rgba(244,114,182,.3);color:#f472b6;padding:10px 16px;font-size:15px;">Positive Outcome</div>
             </div>
             <div class="qbox glow-pulse" style="border-color:#a78bfa;background:rgba(167,139,250,.08);" data-a="left"
               data-d=".25">
@@ -1660,48 +1737,51 @@
           <div class="hm" data-a="right" data-d=".15" style="display:flex;justify-content:center;">
             <div class="glass"
               style="padding:32px;border-radius:30px;background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.2);animation:fl 9s ease-in-out 1s infinite;">
-              <svg width="200" height="230" viewBox="0 0 200 230" fill="none">
-                <!-- BEFORE label (above box, white for contrast) -->
-                <text x="54" y="12" font-size="11" font-weight="800" fill="rgba(248,113,113,.95)"
-                  font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.5">BEFORE</text>
-                <!-- BEFORE: cracked piece (wrapped in g so wiggle moves all together) -->
+              <svg width="240" height="280" viewBox="0 0 240 280" fill="none">
+                <!-- BEFORE label -->
+                <text x="62" y="16" font-size="13" font-weight="800" fill="rgba(248,113,113,.95)"
+                  font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.6">BEFORE</text>
+                <!-- BEFORE: cracked piece -->
                 <g class="wiggle">
-                  <rect x="18" y="22" width="72" height="72" rx="12" fill="rgba(239,68,68,.1)"
-                    stroke="rgba(239,68,68,.32)" stroke-width="1.5" />
-                  <!-- main crack staying clearly inside rect -->
-                  <path d="M50 28 L56 50 L42 68 L52 88" stroke="rgba(239,68,68,.55)" stroke-width="2.2" fill="none"
+                  <rect x="20" y="26" width="84" height="84" rx="14" fill="rgba(239,68,68,.12)"
+                    stroke="rgba(239,68,68,.35)" stroke-width="1.5" />
+                  <!-- dense crack network - thinner lines, more of them -->
+                  <path d="M58 32 L64 48 L52 58 L60 72 L50 84 L58 104" stroke="rgba(239,68,68,.6)" stroke-width="2" fill="none"
                     stroke-linecap="round" stroke-linejoin="round" />
-                  <!-- branch crack -->
-                  <path d="M56 50 L72 44" stroke="rgba(239,68,68,.45)" stroke-width="1.5" fill="none"
-                    stroke-linecap="round" />
-                  <!-- ✕ centered in rect -->
-                  <text x="54" y="58" font-size="26" fill="rgba(239,68,68,.85)" text-anchor="middle"
+                  <path d="M64 48 L78 42" stroke="rgba(239,68,68,.5)" stroke-width="1.5" fill="none" stroke-linecap="round" />
+                  <path d="M52 58 L36 54" stroke="rgba(239,68,68,.45)" stroke-width="1.5" fill="none" stroke-linecap="round" />
+                  <path d="M60 72 L76 68" stroke="rgba(239,68,68,.45)" stroke-width="1.3" fill="none" stroke-linecap="round" />
+                  <path d="M50 84 L38 90" stroke="rgba(239,68,68,.4)" stroke-width="1.3" fill="none" stroke-linecap="round" />
+                  <path d="M58 40 L44 36" stroke="rgba(239,68,68,.35)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+                  <path d="M64 48 L70 60" stroke="rgba(239,68,68,.35)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+                  <!-- ✕ centered -->
+                  <text x="62" y="68" font-size="28" fill="rgba(239,68,68,.85)" text-anchor="middle"
                     dominant-baseline="central" font-weight="700">✕</text>
                 </g>
 
-                <!-- AFTER label (above box, green) -->
-                <text x="146" y="12" font-size="11" font-weight="800" fill="rgba(74,222,128,.95)"
-                  font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.5">AFTER</text>
+                <!-- AFTER label -->
+                <text x="178" y="16" font-size="13" font-weight="800" fill="rgba(74,222,128,.95)"
+                  font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.6">AFTER</text>
                 <!-- AFTER: fixed piece -->
-                <rect x="110" y="22" width="72" height="72" rx="12" fill="rgba(52,211,153,.12)"
-                  stroke="rgba(52,211,153,.42)" stroke-width="1.5" />
-                <path class="shimmer" d="M126 58 L142 72 L168 42" stroke="rgba(52,211,153,.95)" stroke-width="4"
+                <rect x="136" y="26" width="84" height="84" rx="14" fill="rgba(52,211,153,.14)"
+                  stroke="rgba(52,211,153,.45)" stroke-width="1.5" />
+                <path class="shimmer" d="M154 68 L170 82 L198 50" stroke="rgba(52,211,153,.95)" stroke-width="4.5"
                   fill="none" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(52,211,153,.85);" />
 
                 <!-- Arrow down + bolt -->
-                <line x1="100" y1="100" x2="100" y2="130" stroke="rgba(167,139,250,.6)" stroke-width="2.5"
+                <line x1="120" y1="118" x2="120" y2="152" stroke="rgba(167,139,250,.6)" stroke-width="2.5"
                   stroke-linecap="round" />
-                <polygon points="92,126 100,142 108,126" fill="rgba(167,139,250,.7)" />
-                <text x="76" y="120" font-size="18" fill="rgba(251,191,36,.85)">⚡</text>
+                <polygon points="112,148 120,164 128,148" fill="rgba(167,139,250,.7)" />
+                <text x="94" y="142" font-size="20" fill="rgba(251,191,36,.85)">⚡</text>
 
-                <!-- Employers box -->
-                <rect x="18" y="152" width="164" height="62" rx="10" fill="rgba(167,139,250,.08)"
-                  stroke="rgba(167,139,250,.2)" stroke-width="1" />
-                <text x="34" y="172" font-size="9" font-weight="600" fill="rgba(167,139,250,.65)"
-                  font-family="Inter,sans-serif">EMPLOYERS LOOK FOR:</text>
-                <text x="34" y="191" font-size="11" fill="rgba(52,211,153,.8)" font-family="Inter,sans-serif">✓ Takes
+                <!-- Employers box - more padding -->
+                <rect x="18" y="176" width="204" height="88" rx="12" fill="rgba(167,139,250,.08)"
+                  stroke="rgba(167,139,250,.22)" stroke-width="1.5" />
+                <text x="38" y="202" font-size="12" font-weight="700" fill="rgba(167,139,250,.7)"
+                  font-family="Inter,sans-serif" letter-spacing="0.5">EMPLOYERS LOOK FOR:</text>
+                <text x="38" y="226" font-size="14" fill="rgba(52,211,153,.9)" font-family="Inter,sans-serif">✓ Takes
                   responsibility</text>
-                <text x="34" y="207" font-size="11" fill="rgba(52,211,153,.8)" font-family="Inter,sans-serif">✓ Learns
+                <text x="38" y="250" font-size="14" fill="rgba(52,211,153,.9)" font-family="Inter,sans-serif">✓ Learns
                   from experience</text>
               </svg>
             </div>
@@ -1904,6 +1984,7 @@
     </section>
 
   </div><!-- #app -->
+  </main>
 
   <script>
     /* ══════════════════════════════════════════════════════

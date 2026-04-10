@@ -53,6 +53,11 @@ Background  →  Key Skill  →  Why This Role
 **Example tip:**
 > "Keep it crisp: who you are, what you bring, and why you're here."
 
+**Useful phrases:**
+- *"I'm particularly proud of..."* - to introduce a real achievement
+- *"A good example that comes to mind..."* - to bring in a story
+- *"Timekeeping is important to me - I always plan ahead to meet deadlines."*
+
 **Visual idea:** Stopwatch icon / speech bubble with 3-part formula
 
 ---
@@ -70,6 +75,9 @@ Background  →  Key Skill  →  Why This Role
 **Pro tip box:**
 > "People who truly know the company always stand out."
 
+**If stuck for words:**
+> "I really, really want this job and I am willing to work very hard if I get it."
+
 **Visual idea:** Magnifying glass over a company logo / research icon
 
 ---
@@ -77,13 +85,13 @@ Background  →  Key Skill  →  Why This Role
 ## SLIDE 6 - Q3: Greatest Strength
 **Headline:** Q3: "What is your greatest strength?"
 
-**Formula:**
+**Formula (use connectors to structure your story):**
 ```
-Strength  →  Real Situation  →  Result
+Strength  →  Firstly (what happened)  →  Secondly (what you did)  →  Above all (the result)
 ```
 
 **Example:**
-> "My strength is staying calm when things get difficult. When my team's deadline moved up by one week, I made a new plan and we finished on time."
+> "My strength is staying calm when things get difficult. Firstly, when my team's deadline moved up by one week, I didn't panic. Secondly, I made a new plan and reorganized the tasks. And above all, we finished on time."
 
 **Key word:** **Be specific - one strength, one story**
 
